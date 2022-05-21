@@ -1,0 +1,349 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+/* Esta primera clase es la imagen de fondo del head  */
+
+.bg-header {
+    background-image: url('/img/bg-header-min.jpg');
+    /*Pone la Imagen */
+    background-repeat: no-repeat;
+    /*Hace que al hacerse grande la imegen no se repita*/
+    background-position: center;
+    /*Centra la imagem*/
+    background-size: cover;
+    /*Hace que al agrandar o achicar la imagen esta se adapte al tamaño*/
+    height: 18.75em;
+    /*HAce referencia a la altura de esa imagen*/
+}
+
+/*Esta es el primer div y aqui se pone un fondo negro sobre la imagen de arriba para dar un efecto visual*/
+
+.bg-navbar {
+    background-color: rgba(0, 0, 0, 0.418);
+    /*Ponemos el  tono que queremos de fondo y le damos transparencia */
+    padding: 1.5em 0;
+    /* Se trabaja con esta medida que sera la mitad del rem*/
+}
+
+/*Tercer div donde tenemos las anclas de navegacion*/
+
+.navbar {
+    display: flex;
+    /*Con este hacemos que el conjunto de anclas sea flexible y se pueda mover*/
+    flex-direction: column;
+    /*Al ponerlo en columna hace que el alig-items sea efectivo  */
+    align-items: center;
+    /*Centra las anclas */
+
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/*Cuarto div y clase dada al ancla que contiene la imagen el nombre y las anclas individualmente*/
+
+.navbar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: azure;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bolder;
+    margin-bottom: 0.5em;
+
+}
+
+@media (min-width: 768px) {
+    .navbar-brand {
+        flex-direction: row;
+        margin-bottom: 0em;
+    }
+}
+
+
+/*Cuarto div y clase dada al ancla que contiene la imagen img */
+
+.navbar-brand img {
+    width: 4em;
+    /*Le da el tamaño a la imagen*/
+}
+
+/*Quinto div aqui ponemos una barra de color negro como fondo para las anclas*/
+
+.navbar-nav {
+    background-color: rgba(0, 0, 0, 0.712);
+    /*Color de fondo de la barra de las anclas*/
+    padding: 20px;
+    /*Espaciado hacia todos los lados de esas anclas con respecto a la barra*/
+    border-radius: 0.5em;
+    /*Bordes redondeados de esa barra*/
+
+
+}
+
+/*Clases dadas a cada una de las anclas.*/
+
+.nav-link {
+    display: inline-block;
+    /*Se ponene en bloque para que pueda acceder a las demas propiedades*/
+    padding: 0.3em;
+    /*Separacion de todos los lados con respecto a la barra*/
+    text-decoration: none;
+    /*Les quita las barras inferiores que vienen por defecto*/
+    color: white;
+    /*Les da color a las letras*/
+}
+
+
+/* Esta es una sub-propiedad con la cual al pasar el mouse sobre las anclas les dara un efecto */
+
+.nav-link:hover {
+    background: white;
+    /* Le pone el color de fondo Blanco*/
+    color: black;
+    /*Le pone la letra Negra*/
+    border-radius: 5px;
+    /* Cambia los bordes a redondeados*/
+}
+
+
+/* Main */
+
+/*Contenedor de todas las tarjetas y ademas del tittulo de NUESTROS PRODUCTOS*/
+
+.main {
+    margin-top: -2em;
+    /*Le da un margen a ese contenedor hacia arriba para que se meta a la imagen superior*/
+    border-radius: 1em;
+    /*Le da un borde redondo a ese contenedor*/
+    background: azure;
+    /*Le pone un fondo a todo azure o blanco*/
+}
+
+/* Hace referencia a el Titulo inicial de NUESTRA TIENDA */
+
+.main-title {
+    text-align: center;
+    /*Alinea ese texto al centro*/
+    text-transform: uppercase;
+    /* Transforma todas sus letras a mayusculas*/
+    padding-top: 20px;
+    /*Deja Un margen superior de 20px*/
+}
+
+@media (min-width:768px) {
+    .tienda {
+        display: flex;
+        gap: 1em;
+
+    }
+}
+
+/* Clases Reutilizables */
+
+/* Esta clase basicamente lo que hace es que encasilla a c/u de las parted de mi pagina 
+El header el main principal y el footer  */
+
+.container {
+
+    width: 80%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+/* Como a lo largo de la pagina existen varios botones con esta clase se ocupa de darle las caracteristicas a esos botones */
+
+.btn {
+    display: flex;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5em;
+    margin: 0 0.1em;
+    border-radius: 0.5em;
+    justify-content: center;
+}
+
+.btn-danger {
+    /*Esta seria una manera de Centrar Botones. con Margin Auto como se muestra en los botones de google de las tarjetas*/
+    color: black;
+    font-weight: bold;
+    background-color: aqua;
+    width: 160px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.btn-dark {
+    /*Esta seria una manera de Centrar Botones. con Margin Auto como se muestra en los botones de google de las tarjetas*/
+    color: black;
+    background-color: aqua;
+    width: 100px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Esta es la manera de darle caracteristicas a cada uno de esas tarjetas donde tenemos la informacion*/
+
+.card {
+    background-color: rgb(0, 0, 0);
+    color: wheat;
+    overflow: hidden;
+    /* hace que el navegador oculte todos los contenidos que se salen de la caja del elemento*/
+    border-radius: 0.5px;
+    margin-bottom: 1em;
+
+}
+
+/* Le da el peso a las imagenes de las tarjetas dentro del contenedor al que le fue asignado y ocupa el 100% del mismo  */
+
+.card img {
+    width: 100%;
+
+}
+
+/* Contiene el cuerpo de cada articulo es decir donde va el lorem de titulo, el parrafo y su boton */
+
+.card-body {
+    border: 4px solid blue;
+    padding: 1em;
+}
+
+/* Aqui ya inicia la discriminacion de cada uno de los componentes de ese body en este caso el del h5 */
+
+.card-body h5 {
+    font-size: 1.5rem;
+    margin: 1em 0;
+    font-weight: 500;
+}
+
+/* Aqui ya inicia la discriminacion de cada uno de los componentes de ese body en este caso el del parrafo */
+.card-body p {
+    font-weight: 200;
+}
+
+/* Nosotros : ESTA SECCION ES LA PARTE DE LA TARJETA QUE ESTA MAS ABAJO DE TODAS E INVOLUCRA TANTO A
+                LO QUE ES EL TITULO, EL PARRAFO Y LA IMAGEN  */
+
+.nosotros {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+    background-color: #0F2620;
+}
+
+/* Esta etiqueta ya involucra lo que es la imagen como tal. */
+
+.nosotros-col-img {
+    background-image: url('/img/nosotros-min.png');
+    /*Se monta la imagen por medio del css no en el html*/
+    background-position: center;
+    /*Centra la imagen */
+    background-repeat: no-repeat;
+    /*Hace que la imagen no se repita */
+    background-size: cover;
+    /*hace que la imagen ocupe el espacio de su contenedor no mas */
+    height: 21.87em;
+    /* Le damos una altura con este valor*/
+    width: 100%;
+    /* Le dice que cual debe ser el ancho de la imagen */
+    order: 2;
+    /* Hace que el orden de la imagen y el texto se inviertan de manera que uno debe tener el 0 
+                y el otro deberia tener el 1 0 2 */
+}
+
+
+/* Hace referencia al orden del texto en este caso le ponemos el 0 para que se ubique en la parte inferior */
+.nosotros-col-text {
+    order: 1;
+
+}
+
+@media (min-width:576px) {
+    .nosotros-col-img {
+        height: 31.25em;
+    }
+}
+
+@media (min-width:768px) {
+    .nosotros {
+        flex-direction: row;
+    }
+
+    .nosotros-col-img {
+        order: 1;
+        flex: 1 1 0;
+
+    }
+
+    .nosotros-col-text {
+        order: 2;
+        flex: 1 1 0;
+
+    }
+}
+
+/* Contiene lo que es El titulo, el parrafo y el ancla que dice mas informacion */
+
+.nosotros-body {
+
+    border: 4px solid orangered;
+    padding: 1em;
+    text-align: center;
+    color: aliceblue;
+}
+
+/* Aqui ya se discriminan cada una de las propiedades del nosotros */
+
+.nosotros-body h2 {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Aqui de igual manera se discrimina lo que es el parrafo para este caso el p */
+.nosotros-body p {
+    font-weight: 200;
+}
+
+/* footer */
+
+/* Esta primera clase es para darle el fondo correspondiente a l footer, poner caracteristicas  */
+
+.bg-footer {
+    background-color: orange;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 80%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.bg-footer p {
+    margin: 0.1em;
+    padding: 0.5em 0;
+    text-align: center;
+    font-weight: bolder;
+}
